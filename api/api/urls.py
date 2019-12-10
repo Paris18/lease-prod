@@ -26,7 +26,7 @@ from rest_framework.routers import SimpleRouter
 # intialize DefaultRouter
 router = SimpleRouter()
 # register accounts app urls with router
-router.register(r'rate', views.RateManager, base_name='rate')
+router.register(r'rate_product', views.RateManager, base_name='rate')
 
 
 urlpatterns = [

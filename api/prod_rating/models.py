@@ -22,6 +22,8 @@ class rating(TimeStampedModel):
             MinValueValidator(0)
         ])
 	feedback = models.TextField()
-	product = models.CharField(max_length=10)
-	subscription_id = models.UUIDField(default=uuid.uuid4, editable=False)
+	product = models.CharField(max_length=50)
+	subscription_id = models.UUIDField(default=uuid.uuid4, editable=False,unique=True)
 
+	def __str__(self):
+        return str(self.product)
