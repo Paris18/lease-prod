@@ -8,26 +8,26 @@ As Further we can automate the payment process and as its centralised system we 
 	Python 3
 	Virtualenv
 
-### step 1: create environment with virtualenv
+#### step 1: create environment with virtualenv
 
-### step 2: install the requirements with requirements.txt file located in project folder
+#### step 2: install the requirements with requirements.txt file located in project folder
 
        pip install -r requirements.txt
        
-### step 3: Create migration file with makemigration command
+#### step 3: Create migration file with makemigration command
 
       python manage.py makemigrations
 
-### step 4:apply the migrations to db with migrate command
+#### step 4:apply the migrations to db with migrate command
     
      python manage.py migrate
      
-### step 5:run the application
+#### step 5:run the application
 
      python manage.py runserver
    
 ## Output Sample
- #### Rate the product
+ ### Rate the product
  
 	curl -X POST \
 	  http://127.0.0.1:8000/api/v1/rate_product/rateproduct/ 
@@ -38,7 +38,7 @@ As Further we can automate the payment process and as its centralised system we 
 		 "product":"furniture 5",
 		 “subscription_id”:’1e04a834-5fec-4f53-9fd3-4a55062de5b5’
 	 }'
- ### Note: we assumed that this is valid rent subscription, authorised user
+ #### Note: we assumed that this is valid rent subscription, authorised user
 
     Output:
     {"status":"Successfully rated Product"}
@@ -106,7 +106,7 @@ As Further we can automate the payment process and as its centralised system we 
 
 
 
-5:get individual product rate
+### get individual product rate
 
 	   curl -X GET \
 	  'http://127.0.0.1:8000/api/v1/rate_product/product_rate/?product=furniture%201' \
