@@ -3,7 +3,7 @@ This System is a Software Solution for renting system(B2C),customer as the end-u
 As Further we can automate the payment process and as its centralised system we can easily setup the new business or new branch.
 
 # Installation and Execution
-### Basic Requirements
+#### Basic Requirements
 
 	Python 3
 	Virtualenv
@@ -27,7 +27,7 @@ As Further we can automate the payment process and as its centralised system we 
      python manage.py runserver
    
 ## Output Sample
- ### Rate the product
+ #### Rate the product
  
 	curl -X POST \
 	  http://127.0.0.1:8000/api/v1/rate_product/rateproduct/ 
