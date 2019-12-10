@@ -3,31 +3,31 @@ This System is a Software Solution for renting system(B2C),customer as the end-u
 As Further we can automate the payment process and as its centralised system we can easily setup the new business or new branch.
 
 # Installation and Execution
-Basic Requirements
+### Basic Requirements
 
 	Python 3
 	Virtualenv
 
-step 1: create environment with virtualenv
+### step 1: create environment with virtualenv
 
-step 2: install the requirements with requirements.txt file located in project folder
+### step 2: install the requirements with requirements.txt file located in project folder
 
        pip install -r requirements.txt
        
-step 3: Create migration file with makemigration command
+### step 3: Create migration file with makemigration command
 
       python manage.py makemigrations
 
-step 4:apply the migrations to db with migrate command
+### step 4:apply the migrations to db with migrate command
     
      python manage.py migrate
      
-step 5:run the application
+### step 5:run the application
 
      python manage.py runserver
    
-# Output Sample
- 1:Rate the product
+## Output Sample
+ ### Rate the product
  
 	curl -X POST \
 	  http://127.0.0.1:8000/api/v1/rate_product/rateproduct/ 
@@ -38,12 +38,12 @@ step 5:run the application
 		 "product":"furniture 5",
 		 “subscription_id”:’1e04a834-5fec-4f53-9fd3-4a55062de5b5’
 	 }'
- Note: we assumed that this is valid rent subscription, authorised user
+ ### Note: we assumed that this is valid rent subscription, authorised user
 
     Output:
     {"status":"Successfully rated Product"}
 
-2:List the rates
+### List the rates
 
   	curl -X GET \
   	http://127.0.0.1:8000/api/v1/rate_product/ratelist/ 
@@ -70,7 +70,7 @@ step 5:run the application
 	      ]
 	   }
         # Note: used pagination here
-3:get individual rate details
+### get individual rate details
 	
 	curl -X GET \
        'http://127.0.0.1:8000/api/v1/rate_product/getrate/?id=1e04a834-5fec-4f53-9fd3-4a55062de5b5' \
@@ -86,7 +86,7 @@ step 5:run the application
             "product": "furniture 1",
             "subscription_id": "88885ed2-b028-4680-b728-6068636c4433"
         }
-4:get all product rate analysis
+### get all product rate analysis
 
 	curl -X GET \
 	http://127.0.0.1:8000/api/v1/rate_product/rates/ \
