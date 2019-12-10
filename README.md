@@ -26,7 +26,7 @@
 
      python manage.py runserver
    
-## Output Sample
+## Response Sample
  ### Rate the product
  
 	curl -X POST \
@@ -40,16 +40,16 @@
 	 }'
  #### Note: we assumed that this is valid rent subscription, authorised user
 
-    Output:
+    Response:
     {"status":"Successfully rated Product"}
 
 ### List the rates
 
   	curl -X GET \
   	http://127.0.0.1:8000/api/v1/rate_product/ratelist/ 
-  	-H 'Content-Type: application/json' \
+  	-H 'Content-Type: application/json'
 
-	Output:
+	Response:
 	    {
 	    "count": 26,
 	    "next": "http://127.0.0.1:8000/api/v1/rate_product/ratelist/?page=2",
@@ -69,13 +69,13 @@
 		.
 	      ]
 	   }
-        # Note: used pagination here
+        # Note: used pagination here and we can filter data by sending 'product' as param(optional)
 ### get individual rate details
 	
 	curl -X GET \
-       'http://127.0.0.1:8000/api/v1/rate_product/getrate/?id=1e04a834-5fec-4f53-9fd3-4a55062de5b5' \
+       'http://127.0.0.1:8000/api/v1/rate_product/getrate/?id=1e04a834-5fec-4f53-9fd3-4a55062de5b5'
 
-        Output:
+        Response:
         {
             "id": "1e04a834-5fec-4f53-9fd3-4a55062de5b5",
             "created_at": "2019-12-10T11:26:59+0000",
@@ -89,9 +89,9 @@
 ### get all product rate analysis
 
 	curl -X GET \
-	http://127.0.0.1:8000/api/v1/rate_product/rates/ \
+	http://127.0.0.1:8000/api/v1/rate_product/rates/
 
-	    Output:
+	    Response:
 
 	    [
 		{
@@ -109,9 +109,9 @@
 ### get individual product rate
 
 	   curl -X GET \
-	  'http://127.0.0.1:8000/api/v1/rate_product/product_rate/?product=furniture%201' \
+	  'http://127.0.0.1:8000/api/v1/rate_product/product_rate/?product=furniture%201'
 
-	    Output:
+	    Response:
 	    [
 		{
 		    "product": "furniture 1",
@@ -135,3 +135,9 @@
 		"id":"f39e5cda-21d5-4831-a333-42eefcbf6928"
  	}'
 
+    Response:
+    {
+		 "rate": 1,
+         "feedback":"update test",
+		 "id":"f39e5cda-21d5-4831-a333-42eefcbf6928"
+ 	}
