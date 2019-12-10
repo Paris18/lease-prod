@@ -2,7 +2,7 @@
 This System is a Software Solution for renting system(B2C),customer as the end-user he can rent the product. This Application can maintain the good track of the rented products , also works better communication medium between the vendor and user, it also has the  rating option for product and from this option vendor can  maximize product subscription , good communication track with user.
 As Further we can automate the payment process and as its centralised system we can easily setup the new business or new branch.
 
-*Basic Requirement*
+# Basic Requirement
 Python 3
 Virtualenv
 
@@ -25,17 +25,17 @@ step 5:run the application
      python manage.py runserver
    
 *Output Sample*
-1)	Rate the product:
-curl -X POST \
-  http://127.0.0.1:8000/api/v1/rate_product/rateproduct/ 
-  -H 'Content-Type: application/json' 
-  -d '{
-         "rate": 5,
-         "feedback":"test",
-         "product":"furniture 5",
-         “subscription_id”:’1e04a834-5fec-4f53-9fd3-4a55062de5b5’
- }'
- #Note: we assumed that this is valid rent subscription, authorised user
+ 1:Rate the product
+	curl -X POST \
+	  http://127.0.0.1:8000/api/v1/rate_product/rateproduct/ 
+	  -H 'Content-Type: application/json' 
+	  -d '{
+		 "rate": 5,
+		 "feedback":"test",
+		 "product":"furniture 5",
+		 “subscription_id”:’1e04a834-5fec-4f53-9fd3-4a55062de5b5’
+	 }'
+ # Note: we assumed that this is valid rent subscription, authorised user
 
     Output:
     {"status":"Successfully rated Product"}
