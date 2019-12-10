@@ -1,5 +1,5 @@
 # lease-product
-This System is a Software Solution for renting system(B2C),customer as the end-user he can rent the product. This Application can maintain the good track of the rented products , also works better communication medium between the vendor and user, it also has the  rating option for product and from this option vendor can  maximize product subscription , good communication track with user.
+This System is a Software Solution for renting system(B2C),customer as the end-user he can rent the product. This Application can maintain the good track of the rented products , also works better communication medium between the vendor and user, it also has the  rating option for product and from this option vendor can  maximize product subscription , good communication track with user.\
 As Further we can automate the payment process and as its centralised system we can easily setup the new business or new branch.
 
 # Installation and Execution
