@@ -31,6 +31,7 @@ from .models import (
 from .serialiser import (
 	RatingAddSerializer,
 	ListRatingSerializer,
+	RatingUpdateSerializer,
 )
 
 
@@ -47,6 +48,7 @@ class RateManager(GenericViewSet):
 		'rateproduct': RatingAddSerializer,
 		'ratelist': ListRatingSerializer,
 		'getrate':ListRatingSerializer,
+		'updaterate':RatingUpdateSerializer
 		}
 
 
@@ -71,11 +73,29 @@ class RateManager(GenericViewSet):
 			raise ParseException(BAD_REQUEST, serializer.errors)
 
 
+	@action(methods=['put'], detail=False)
+	def updaterate(self, request, format='json'):
+		try:
+			data =request.data 
+			instance = self.model.objects.get(id=data["id"])
+			serializer = self.get_serializer(instance,data=data)
+			if serializer.is_valid():
+				serializer.save()
+				return Response(serializer.data, status=status.HTTP_201_CREATED)
+			else:
+				raise ParseException(BAD_REQUEST, serializer.errors)
+		except self.model.DoesNotExist:
+			raise ResourceNotFoundException(BAD_REQUEST)
+		except:
+			raise ParseException(BAD_REQUEST)
+
+
+
 	@action(methods=['get'], detail=False)
 	def ratelist(self, request, format='json'):
 		try:
-			filterdata = self.query_string(request.query_params.dict())
-			page = self.paginate_queryset(self.get_queryset())
+			filterdata = request.query_params.dict()
+			page = self.paginate_queryset(self.get_queryset(filterdata=filterdata))
 			serialiser = self.get_serializer(page,many=True)
 			return self.get_paginated_response(serialiser.data)
 		except:

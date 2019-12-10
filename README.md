@@ -122,5 +122,16 @@
 		}
 	    ]
 
+### Update Rate data
 
+	curl -X PUT \
+  	http://127.0.0.1:8000/api/v1/rate_product/updaterate/ \
+  	-H 'Content-Type: application/json' \
+  	-H 'Postman-Token: 94e6d970-1ded-4a19-baa0-7de2febf354c' \
+  	-H 'cache-control: no-cache' \
+  	-d '{
+		 "rate": 1,
+         "feedback":"update test",
+		"id":"f39e5cda-21d5-4831-a333-42eefcbf6928"
+ 	}'
 

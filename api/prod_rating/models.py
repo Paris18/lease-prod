@@ -18,12 +18,12 @@ from libs.models import TimeStampedModel
 class rating(TimeStampedModel):
 	id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
 	rate = models.IntegerField(validators=[
-            MaxValueValidator(5),
-            MinValueValidator(0)
-        ])
+			MaxValueValidator(5),
+			MinValueValidator(0)
+		])
 	feedback = models.TextField()
 	product = models.CharField(max_length=50)
 	subscription_id = models.UUIDField(default=uuid.uuid4, editable=False,unique=True)
 
 	def __str__(self):
-        return str(self.product)
+		return str(self.product)
