@@ -8,7 +8,7 @@
 	Python 3
 	Virtualenv
 
-#### step 1: create environment with virtualenv
+#### step 1: create environment with virtualenv and activate
 
 #### step 2: install the requirements with requirements.txt file located in project folder
 
