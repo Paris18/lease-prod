@@ -70,7 +70,7 @@
 	      ]
 	   }
         # Note: used pagination here and we can filter data by sending 'product' as param(optional)
-### get individual rate details
+### Get individual rate details
 	
 	curl -X GET \
        'http://127.0.0.1:8000/api/v1/rate_product/getrate/?id=1e04a834-5fec-4f53-9fd3-4a55062de5b5'
@@ -86,7 +86,7 @@
             "product": "furniture 1",
             "subscription_id": "88885ed2-b028-4680-b728-6068636c4433"
         }
-### get all product rate analysis
+### Get all product rate analysis
 
 	curl -X GET \
 	http://127.0.0.1:8000/api/v1/rate_product/rates/
@@ -106,7 +106,7 @@
 
 
 
-### get individual product rate
+### Get individual product rate
 
 	   curl -X GET \
 	  'http://127.0.0.1:8000/api/v1/rate_product/product_rate/?product=furniture%201'
